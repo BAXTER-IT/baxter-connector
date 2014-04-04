@@ -8,20 +8,20 @@
         <version>1.2.2</version>
     </parent>
 
-    <groupId>com.baxter.jms</groupId>
-    <artifactId>baxter-jms-connector</artifactId>
-    <version>2.1-SNAPSHOT</version>
+    <groupId>com.baxter</groupId>
+    <artifactId>baxter-connector</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Baxter JMS Connector</name>
+    <name>Baxter Connector Parent</name>
 
-    <inceptionYear>2013</inceptionYear>
+    <inceptionYear>2014</inceptionYear>
 
-    <url>https://repository-baxter.forge.cloudbees.com/private/sites/jms-connector/</url>
+    <url>https://repository-baxter.forge.cloudbees.com/private/sites/connector-parent/</url>
 
     <scm>
-        <connection>scm:git:ssh://git@git.cloudbees.com/baxter/baxter-jms-connector.git</connection>
-        <developerConnection>scm:git:ssh://git@git.cloudbees.com/baxter/baxter-jms-connector.git</developerConnection>
-        <url>ssh://git@git.cloudbees.com/baxter/baxter-jms-connector.git</url>
+        <connection>scm:git:ssh://git@git.cloudbees.com/baxter/baxter-connector.git</connection>
+        <developerConnection>scm:git:ssh://git@git.cloudbees.com/baxter/baxter-connector.git</developerConnection>
+        <url>ssh://git@git.cloudbees.com/baxter/baxter-connector.git</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -61,7 +61,7 @@
                 <site>
                     <id>cloudbees-private-repository</id>
                     <name>Baxter Configuration Site</name>
-                    <url>dav:https://repository-baxter.forge.cloudbees.com/private/sites/jms-connector/</url>
+                    <url>dav:https://repository-baxter.forge.cloudbees.com/private/sites/connector/</url>
                 </site>
             </distributionManagement>
         </profile>
@@ -71,7 +71,7 @@
             <distributionManagement>
                 <site>
                     <id>qa-apache</id>
-                    <url>scp://qa.baxtersol.bit/var/www/products/jms-connector/</url>
+                    <url>scp://qa.baxtersol.bit/var/www/products/connector/</url>
                 </site>
             </distributionManagement>
         </profile>
@@ -226,9 +226,11 @@
     </profiles>
 
     <properties>
+        <!-- To be overriden in connector group parent -->
         <connector-type>${project.artifactId}</connector-type>
-        <connector-jar>baxter-jms-connector.jar</connector-jar>
-        <unix.package>baxter-jms-connector</unix.package>
+        <connector-jar>${project.artifactId}.jar</connector-jar>
+        <!-- General properties -->
+        <unix.package>${project.artifactId}</unix.package>
         <unix.application.group.name>Java</unix.application.group.name>
     </properties>
 

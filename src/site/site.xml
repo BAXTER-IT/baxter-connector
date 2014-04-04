@@ -2,16 +2,18 @@
 <project xmlns="http://maven.apache.org/DECORATION/1.1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/DECORATION/1.1.0 http://maven.apache.org/xsd/decoration-1.1.0.xsd"
-    name="Baxter JMS Connector">
+    name="Baxter Connector">
     
     <bannerLeft>
-        <name>Baxter JMS Connector</name>
+        <name>Baxter Connector</name>
     </bannerLeft>
     
     <body>
         
-        <menu name="Connector" inherit="top" inheritAsRef="true">
-            <item name="Versions" href="versions.html" />
+        <menu name="Connector Groups" inherit="top" inheritAsRef="true">
+            <item name="JMS" href="../jms-connector/connectors.html" />
+            <item name="Logging" href="../log-connector/connectors.html" />
+            <item name="Jetty" href="../jetty-wrapper/index.html" />
         </menu>
         
     </body>

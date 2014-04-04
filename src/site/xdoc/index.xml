@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document xmlns="http://maven.apache.org/XDOC/2.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
 
     <head>
-        <title>Baxter JMS Connector</title>
+        <title>Baxter Connector</title>
     </head>
 
     <body>
 
         <section name="Greetings">
 
-            <p>Hello everybody!!! That is a welcome page for JMS Connector. </p>
+            <p>That is all about the Baxter Connector abstraction.</p>
 
+            <p>The purposes of any Baxter Connector are:</p>
+            <ul>
+                <li>switch different connection providers without main product rebuild</li>
+                <li>extraction of an external dependencies from the main product</li>
+            </ul>
 
         </section>
 

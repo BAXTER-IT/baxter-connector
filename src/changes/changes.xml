@@ -4,27 +4,9 @@
 
     <body>
 
-        <release version="1.0.2" date="2013-11-26" description="JMS Connector versions">
-            <action type="add" issue="PE-3856" dev="ykryshchuk" system="JIRA">
-            More versions for JMS Connectors.
-            </action>
-        </release>
-        
-        <release version="1.0.1" date="2013-11-26" description="JMS Connector versions">
-            <action type="add" issue="PE-3856" dev="ykryshchuk" system="JIRA">
-            More versions for JMS Connectors.
-            </action>
-        </release>
-        
-        <release version="1.0" date="2013-11-26" description="Advanced JMS Connectors">
-            <action type="add" issue="PE-3856" dev="ykryshchuk" system="JIRA">
-            Added RPM Packages for SwiftMQ and Tibco JMS connectors.
-            </action>
-        </release>
-
-        <release version="0.1" date="2013-11-25" description="Initial release">
-            <action type="add" dev="ykryshchuk" >
-            DEB package for SwiftMQ 2.1.3 JMS Connector.
+        <release version="1.0" date="2014-04-04" description="Initial release">
+            <action type="add" dev="ykryshchuk">
+            Collecting all connector requirements in profiles
             </action>
         </release>
 
