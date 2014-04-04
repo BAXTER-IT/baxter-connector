@@ -227,7 +227,7 @@
     <properties>
         <!-- To be overriden in connector group parent -->
         <connector-type>${project.artifactId}</connector-type>
-        <connector-jar>${project.artifactId}.jar</connector-jar>
+        <connector-jar>${connector-type}.jar</connector-jar>
         <!-- General properties -->
         <unix.package>${project.artifactId}</unix.package>
         <unix.application.group.name>Java</unix.application.group.name>
