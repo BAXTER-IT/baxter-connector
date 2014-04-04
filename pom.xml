@@ -8,7 +8,6 @@
         <version>1.2.2</version>
     </parent>
 
-    <groupId>com.baxter</groupId>
     <artifactId>baxter-connector</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
