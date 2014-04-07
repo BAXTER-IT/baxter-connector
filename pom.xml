@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>baxter-connector</artifactId>
-    <version>1.0.2</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Baxter Connector Parent</name>
 
@@ -21,7 +21,7 @@
         <connection>scm:git:ssh://git@git.cloudbees.com/baxter/baxter-connector.git</connection>
         <developerConnection>scm:git:ssh://git@git.cloudbees.com/baxter/baxter-connector.git</developerConnection>
         <url>ssh://git@git.cloudbees.com/baxter/baxter-connector.git</url>
-        <tag>baxter-connector-1.0.2</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <build>
