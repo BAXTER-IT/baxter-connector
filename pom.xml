@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -159,6 +160,9 @@
                                 <execution>
                                     <id>build-std-rpm-installer</id>
                                     <configuration>
+                                        <provides combine.children="append">
+                                            <provide>${connector-type}-std</provide>
+                                        </provides>
                                         <mappings combine.children="append">
                                             <mapping>
                                                 <directory>${unix.application.lib.dir}</directory>
@@ -185,6 +189,9 @@
                                 <execution>
                                     <id>build-alt-rpm-installer</id>
                                     <configuration>
+                                        <provides combine.children="append">
+                                            <provide>${connector-type}-alt</provide>
+                                        </provides>
                                         <mappings combine.children="append">
                                             <mapping>
                                                 <directory>${unix.application.alt.root}</directory>
