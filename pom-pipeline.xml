@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.baxter.ci</groupId>
         <artifactId>ci-base</artifactId>
-        <version>1.7</version>
+        <version>1.10</version>
     </parent>
 
     <groupId>com.baxter</groupId>
@@ -16,123 +16,93 @@
 
     <name>Baxter Connector for Jenkins Pipeline</name>
 
+    <profiles>
+        <profile>
+            <id>YUM-Repo</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
     <build>
-
         <plugins>
-
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>fetch-packages</id>
+                        <id>fetch-jms-packages</id>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
                         <configuration>
-                            <includeTypes>rpm</includeTypes>
+                            <outputDirectory>${repobase.dir}</outputDirectory>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.baxter.jms</groupId>
+                                    <artifactId>baxter-swiftmq-connector</artifactId>
+                                    <version>2.1.3</version>
+                                    <classifier>${distribution}</classifier>
+                                    <type>rpm</type>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.baxter.jms</groupId>
+                                    <artifactId>baxter-swiftmq-connector</artifactId>
+                                    <version>7.3.0</version>
+                                    <classifier>${distribution}</classifier>
+                                    <type>rpm</type>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.baxter.jms</groupId>
+                                    <artifactId>baxter-swiftmq-connector</artifactId>
+                                    <version>7.5.4</version>
+                                    <classifier>${distribution}</classifier>
+                                    <type>rpm</type>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.baxter.jms</groupId>
+                                    <artifactId>baxter-swiftmq-connector</artifactId>
+                                    <version>9.2.5</version>
+                                    <classifier>${distribution}</classifier>
+                                    <type>rpm</type>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.baxter.jms</groupId>
+                                    <artifactId>baxter-tibco-connector</artifactId>
+                                    <version>6.0.0</version>
+                                    <classifier>${distribution}</classifier>
+                                    <type>rpm</type>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.baxter.jms</groupId>
+                                    <artifactId>baxter-tibco-connector</artifactId>
+                                    <version>6.3.0</version>
+                                    <classifier>${distribution}</classifier>
+                                    <type>rpm</type>
+                                </artifactItem>
+                            </artifactItems>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>wagon-maven-plugin</artifactId>
-            </plugin>
         </plugins>
-
     </build>
 
-    <profiles>
-
-        <profile>
-            <id>YUM-Repo</id>
-
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-dependency-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>fetch-jms-packages</id>
-                                <goals>
-                                    <goal>copy</goal>
-                                </goals>
-                                <phase>prepare-package</phase>
-                                <configuration>
-                                    <outputDirectory>${repobase.dir}</outputDirectory>
-                                    <artifactItems>
-                                        <artifactItem>
-                                            <groupId>com.baxter.jms</groupId>
-                                            <artifactId>baxter-swiftmq-connector</artifactId>
-                                            <version>2.1.3</version>
-                                            <classifier>${rpm-classifier}</classifier>
-                                            <type>rpm</type>
-                                        </artifactItem>
-                                        <artifactItem>
-                                            <groupId>com.baxter.jms</groupId>
-                                            <artifactId>baxter-swiftmq-connector</artifactId>
-                                            <version>7.3.0</version>
-                                            <classifier>${rpm-classifier}</classifier>
-                                            <type>rpm</type>
-                                        </artifactItem>
-                                        <artifactItem>
-                                            <groupId>com.baxter.jms</groupId>
-                                            <artifactId>baxter-swiftmq-connector</artifactId>
-                                            <version>7.5.4</version>
-                                            <classifier>${rpm-classifier}</classifier>
-                                            <type>rpm</type>
-                                        </artifactItem>
-                                        <artifactItem>
-                                            <groupId>com.baxter.jms</groupId>
-                                            <artifactId>baxter-swiftmq-connector</artifactId>
-                                            <version>9.2.5</version>
-                                            <classifier>${rpm-classifier}</classifier>
-                                            <type>rpm</type>
-                                        </artifactItem>
-                                        <artifactItem>
-                                            <groupId>com.baxter.jms</groupId>
-                                            <artifactId>baxter-tibco-connector</artifactId>
-                                            <version>6.0.0</version>
-                                            <classifier>${rpm-classifier}</classifier>
-                                            <type>rpm</type>
-                                        </artifactItem>
-                                        <artifactItem>
-                                            <groupId>com.baxter.jms</groupId>
-                                            <artifactId>baxter-tibco-connector</artifactId>
-                                            <version>6.3.0</version>
-                                            <classifier>${rpm-classifier}</classifier>
-                                            <type>rpm</type>
-                                        </artifactItem>
-                                    </artifactItems>
-                                </configuration>
-                            </execution>
-
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-            <dependencies>
-                <dependency>
-                    <groupId>com.baxter.log</groupId>
-                    <artifactId>baxter-log4j-connector</artifactId>
-                    <version>1.2.16</version>
-                    <classifier>${rpm-classifier}</classifier>
-                    <type>rpm</type>
-                </dependency>
-                <dependency>
-                    <groupId>com.baxter.log</groupId>
-                    <artifactId>baxter-logback-connector</artifactId>
-                    <version>1.0.13</version>
-                    <classifier>${rpm-classifier}</classifier>
-                    <type>rpm</type>
-                </dependency>
-            </dependencies>
-
-            <properties>
-                <rpm-classifier>${distribution}</rpm-classifier>
-            </properties>
-
-        </profile>
-
-    </profiles>
-
-    <properties> </properties>
-
+    <dependencies>
+        <dependency>
+            <groupId>com.baxter.log</groupId>
+            <artifactId>baxter-log4j-connector</artifactId>
+            <version>1.2.16</version>
+            <classifier>${distribution}</classifier>
+            <type>rpm</type>
+        </dependency>
+        <dependency>
+            <groupId>com.baxter.log</groupId>
+            <artifactId>baxter-logback-connector</artifactId>
+            <version>1.0.13</version>
+            <classifier>${distribution}</classifier>
+            <type>rpm</type>
+        </dependency>
+    </dependencies>
 </project>
