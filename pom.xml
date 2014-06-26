@@ -51,37 +51,6 @@
     <profiles>
 
         <profile>
-            <id>Distribution-CloudBees</id>
-            <distributionManagement>
-                <site>
-                    <id>cloudbees-private-repository</id>
-                    <name>Baxter Configuration Site</name>
-                    <url>dav:https://repository-baxter.forge.cloudbees.com/private/sites/connector/</url>
-                </site>
-            </distributionManagement>
-        </profile>
-
-        <profile>
-            <id>Distribution-Baxter</id>
-            <distributionManagement>
-                <site>
-                    <id>qa-apache</id>
-                    <url>scp://qa.baxtersol.bit/var/www/products/connector/</url>
-                </site>
-            </distributionManagement>
-        </profile>
-
-        <profile>
-            <id>Distribution-Artifactory</id>
-            <distributionManagement>
-                <site>
-                    <id>artifactory-sites-repository</id>
-                    <url>dav:http://baxter.artifactoryonline.com/baxter/sites/connectors</url>
-                </site>
-            </distributionManagement>
-        </profile>
-
-        <profile>
             <id>TARGZ</id>
             <activation>
                 <property>
