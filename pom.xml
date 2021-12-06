@@ -143,9 +143,7 @@
                                         </provides>
                                         <mappings combine.children="append">
                                             <mapping>
-                                                <directory>${unix.application.lib.dir}</directory>
-                                            </mapping>
-                                            <mapping>
+                                                <directoryIncluded>false</directoryIncluded>
                                                 <directory>${unix.application.lib.dir}</directory>
                                                 <artifact>
                                                     <classifiers>
