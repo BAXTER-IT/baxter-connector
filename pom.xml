@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>baxter-connector</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.3-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Baxter Connector Parent</name>
 
